@@ -4,18 +4,13 @@
 int linearSearch(std::vector<int>& arr, int key, int& comparisons) {
     comparisons = 0;
     for (std::size_t i = 0; i < arr.size(); ++i) {
-        ++comparisons;                 // compare arr[i] with key
+        ++comparisons;                 
         if (arr[i] == key) {
             return static_cast<int>(i);
         }
     }
-    return -1;                          // not found
+    return -1;                          
 }
-
-// --- Iterative binary search ---
-// Returns the index of key in arr, or -1 if not found.
-// comparisons will contain the number of element comparisons made.
-// arr must be sorted in non-decreasing order.
 
 int binarySearch(const std::vector<int>& arr, int key, int& comparisons) {
     comparisons = 0;
@@ -25,7 +20,7 @@ int binarySearch(const std::vector<int>& arr, int key, int& comparisons) {
     while (low <= high) {
         int mid = low + (high - low) / 2;
 
-        ++comparisons;                  // compare arr[mid] with key
+        ++comparisons;                  
 
         if (arr[mid] == key) {
             return mid;
@@ -37,12 +32,8 @@ int binarySearch(const std::vector<int>& arr, int key, int& comparisons) {
             high = mid - 1;
         }
     }
-    return -1;                          // not found
+    return -1;                          
 }
-
-// --- Generate sorted vector ---
-// Returns a vector of n integers sorted in non-decreasing order.
-// The numbers are consecutive starting from 1.
 
 std::vector<int> generateSortedVector(int n) {
     std::vector<int> v;
